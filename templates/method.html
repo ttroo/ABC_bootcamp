@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}❤method❤{% endblock %}
+{% block content %}
+
+<div class = "container">
+    <br>
+    {% for key, value in data1.items() %}
+    <b><i>{{key}}</b></i> is <b><i>{{value}}</b></i> !!!
+    <br>
+    {% endfor %}
+    <br>
+    <h1>전송방식은 <b><i>❤{{data2}}❤</b></i> 입니다!</h1>
+</div>
+
+{% endblock %}
