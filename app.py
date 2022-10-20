@@ -1,5 +1,7 @@
 # from urllib import request
-from flask import Flask, render_template, request
+
+from flask import Flask, render_template, request, redirect
+import os
 
 app = Flask(__name__)
 
@@ -29,6 +31,18 @@ def methodout():
         print('GET')
         data = request.args
     return render_template('method.html', data1 = data, data2 = request.method)
+
+@app.route('/fileupload', methods=['GET', 'POST'])
+def fileupload():
+    if request.method == 'GET':
+        return render_template('fileinput.html')
+    else:
+        f = request.files['formFile'] # key 값이기때문에 대괄호를 사용해야 함 ! 
+        path = os.path.dirname(__file__) + '/upload/' + f.filename
+        print(path)
+        f.save(path)
+        print('저장성공 >_<')
+        return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True, port=80)
