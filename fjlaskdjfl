@@ -1,0 +1,72 @@
+[33mcommit 36785c99acedb9e175e56507735f644519e7b9de[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Thu Oct 20 11:46:04 2022 +0900
+
+    점심시간 전까지 수정을 해보았다!
+
+[33mcommit 44a9c542f2fa25375a14142dd0b8d8bdfecdb05e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Thu Oct 20 10:44:50 2022 +0900
+
+    2022/10/20 홈페이지를 수정해보았다!
+
+[33mcommit 0fb53c0aca3e2c4470918ffa35a751af00ec57c2[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Thu Oct 20 10:08:02 2022 +0900
+
+    2022/10/20 file delete
+
+[33mcommit c4433546e02b1dd8a663130efe323a57775df473[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Thu Oct 20 10:06:30 2022 +0900
+
+    2022/10/20 .gitignore modify
+
+[33mcommit 45fcb38c15216ced7ed860e384cdc00f99f263d1[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Thu Oct 20 10:01:08 2022 +0900
+
+    2022/10/20 .gitignore test
+
+[33mcommit 74362372e190812f1ceb2900dbcfc0d2adc1668f[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Thu Oct 20 09:40:10 2022 +0900
+
+    홈페이지 만들기
+
+[33mcommit d69328b3dec06ab72c8b057bdf3d244879a1e158[m
+Merge: 5230857 61595d4
+Author: ttroo <kimttroo@gmail.com>
+Date:   Wed Oct 19 15:24:26 2022 +0900
+
+    수정 수정
+
+[33mcommit 523085711060a014b2fae07f9c380393bd3ab2cd[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Wed Oct 19 15:21:39 2022 +0900
+
+    수정
+
+[33mcommit 61595d4d4263628d1c038b0d16aafb369f5ff42f[m
+Author: ttroo <116133960+ttroo@users.noreply.github.com>
+Date:   Wed Oct 19 15:14:29 2022 +0900
+
+    Update test01.txt
+
+[33mcommit fa895472cb56c2b108782df7527466a06ff8e5ac[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Wed Oct 19 15:09:59 2022 +0900
+
+    2022/10/19 the 3rd commit - 세 번째 줄 추가
+
+[33mcommit 545c5a3ab364b9f5f6be7c064ec82c0b1937e8ea[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Wed Oct 19 14:38:13 2022 +0900
+
+    2022/10/19 the 2nd commit - 두 번째 줄 추가
+
+[33mcommit 9f3fc3089e0ec6bac14c04359e5855ef5b77e4d8[m
+Author: ttroo <kimttroo@gmail.com>
+Date:   Wed Oct 19 14:35:47 2022 +0900
+
+    2022/10/19 the 1st commit
