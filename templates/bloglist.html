@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}❤ blog list page ❤{% endblock %}
+{% block content %}
+
+<br>
+<div class = "container">
+    <h1 class = "text-center"><b><i>❤ 블로그 글 목록 ❤</b></i></h1>
+
+    <br>
+    <br>
+    
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-light">
+              <th scope="col">글번호</th>
+              <th scope="col">제목</th>
+              <th scope="col">글쓴이</th>
+              <th scope="col">기타</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in data %}
+            <tr>
+              <th scope="row">{{item[0]}}</th>
+              <td>{{item[1]}}</td>
+              <td>👩</td>
+              <td>{{item[3]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+
+    <br>
+    <br>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"> <!-- if문으로 활성화 시켜줘야 함~ -->
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+
+</div>
+
+{% endblock %}
