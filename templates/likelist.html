@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}❤ blog list page ❤{% endblock %}
+{% block title %}❤ I like list page ❤{% endblock %}
 {% block content %}
 
 <br>
 <br>
 
 <div class = "container">
-    <h1 class = "text-center"><b><i>❤ 블로그 글 목록 ❤</b></i></h1>
+    <h1 class = "text-center"><b><i>❤ 내가 좋아하는 것들 ❤</b></i></h1>
 
     <br>
     <br>
@@ -17,7 +17,7 @@
               <th scope="col">글번호</th>
               <th scope="col">제목</th>
               <th scope="col">글쓴이</th>
-              <th scope="col">기타</th>
+              <th scope="col">얼마나 좋아하는지</th>
             </tr>
           </thead>
           <tbody>
@@ -25,7 +25,7 @@
             <tr>
               <th scope="row">{{item[0]}}</th>
               <td>
-                <a href = "/blog/{{item[0]}}">{{item[1]}}</a>
+                <a href = "/like/{{item[0]}}">{{item[1]}}</a>
               </td>
               <td>(●'◡'●)</td>
               <td>{{item[3]}}</td>
@@ -55,13 +55,10 @@
 
 <div class = "container">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href = "/blogform">
+        <a href = "/likeform">
         <button class="btn btn-outline-success me-md-2" type="button">새 글 작성</button>
         </a>
     </div>
 </div>
 
 {% endblock %}
-
-
-

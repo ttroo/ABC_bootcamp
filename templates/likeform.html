@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}❤ like form page ❤{% endblock %}
+{% block content %}
+
+<br>
+<h1 class = "text-center"><b><i>❤ like 데이터 입력 ❤</b></i></h1>
+
+<br>
+<div class = "container">
+
+    <form action="/likeform" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">제목</label>
+          <input type="text" class="form-control" id="title" name = "title" aria-describedby="TitleHelp">
+          <div id="TitleHelp" class="form-text">제목을 입력해주세요.</div>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <input type="text" class="form-control" id="content" name = "content" aria-describedby="ContentHelp">
+            <div id="ContentHelp" class="form-text">내용을 입력해주세요.</div>
+          </div>
+        <div class="mb-3">
+            <label for="howlike" class="form-label">별점</label>
+            <input type="text" class="form-control" id="howlike" name = "howlike" aria-describedby="HowlikeHelp">
+            <div id="HowlikeHelp" class="form-text">별점을 입력해주세요.</div>
+          </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">사진</label>
+            <input class="form-control" type="file" id="formFile" name = "formFile" aria-describedby="ImageHelp">
+            <div id="ImageHelp" class="form-text">첨부할 사진을 선택해주세요.</div>
+          </div>
+        <br>
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+    </form>
+
+
+
+
+</div>
+
+{% endblock %}

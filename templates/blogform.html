@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}❤ blog form page ❤{% endblock %}
+{% block content %}
+
+<br>
+<h1 class = "text-center"><b><i>❤ 블로그 데이터 입력 ❤</b></i></h1>
+
+<br>
+<div class = "container">
+
+    <form action="/blogform" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name = "title" aria-describedby="TitleHelp">
+          <div id="TitleHelp" class="form-text">제목을 입력해주세요.</div>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <input type="text" class="form-control" id="content" name = "content" aria-describedby="ContentHelp">
+            <div id="ContentHelp" class="form-text">내용을 입력해주세요.</div>
+          </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Image</label>
+            <input class="form-control" type="file" id="formFile" name = "formFile" aria-describedby="ImageHelp">
+            <div id="ImageHelp" class="form-text">첨부할 파일을 선택해주세요.</div>
+          </div>
+        <br>
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+    </form>
+
+
+
+
+</div>
+
+{% endblock %}

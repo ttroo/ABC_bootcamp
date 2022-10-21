@@ -45,6 +45,8 @@ def fileupload():
         print('저장성공 >_<')
         return redirect('/')
 
+### blog
+
 @app.route('/bloglist', methods=['GET'])
 def bloglist():
     conn = db.dbconn()
@@ -55,6 +57,99 @@ def bloglist():
     print(rows)
     return render_template('bloglist.html', data = rows)
 
+@app.route('/blogform', methods=['GET', 'POST'])
+def blogform():
+    if request.method == 'GET':
+        return render_template('blogform.html')
+    else: # 글을 DB에 저장
+        f = request.files['formFile']
+        path = os.path.dirname(__file__) + '/static/blog/img/' + f.filename
+        print(path)
+        f.save(path)
+        print('저장성공 >_<')
+        print(request.form)
+        conn = db.dbconn()
+        cursor = conn.cursor()
+        sql = '''insert into blog values(?,?,?)'''
+        data = [request.form['title'], request.form['content'], '/static/blog/img/' + f.filename]
+        cursor.execute(sql, data)
+        conn.commit()
+        conn.close()
+        return redirect('/bloglist')
+
+@app.route('/blog/<int:id>')
+def blogcontent(id):
+    conn = db.dbconn()
+    cursor = conn.cursor()
+    sql = '''select * from blog where id = ?'''
+    cursor.execute(sql, id)
+    rows = cursor.fetchone()
+    conn.close()
+    return render_template('blog_content.html', data = rows)
+
+@app.route('/blogdelete/<int:id>')
+def blogdelete(id):
+    conn = db.dbconn()
+    cursor = conn.cursor()
+    sql = '''delete blog where id = ?'''
+    cursor.execute(sql, id)
+    conn.commit()
+    conn.close()
+    return redirect('/bloglist')
+
+### like
+
+@app.route('/likelist', methods=['GET'])
+def likelist():
+    conn = db.dbconn()
+    cursor = conn.cursor()
+    sql = '''select * from [like]'''
+    cursor.execute(sql)
+    rows = cursor.fetchall()
+    print(rows)
+    return render_template('likelist.html', data = rows)
+
+@app.route('/likeform', methods=['GET', 'POST'])
+def likeform():
+    if request.method == 'GET':
+        return render_template('likeform.html')
+    else: # 글을 DB에 저장
+        f = request.files['formFile']
+        path = os.path.dirname(__file__) + '/static/like/img/' + f.filename
+        print(path)
+        f.save(path)
+        print('저장성공 >_<')
+        print(request.form)
+        conn = db.dbconn()
+        cursor = conn.cursor()
+        sql = '''insert into [like] values(?,?,?,?)'''
+        data = [request.form['title'], request.form['content'],  request.form['howlike'], '/static/like/img/' + f.filename]
+        cursor.execute(sql, data)
+        conn.commit()
+        conn.close()
+        return redirect('/likelist')
+
+@app.route('/like/<int:id>')
+def likecontent(id):
+    conn = db.dbconn()
+    cursor = conn.cursor()
+    sql = '''select * from [like] where id = ?'''
+    cursor.execute(sql, id)
+    rows = cursor.fetchone()
+    conn.close()
+    return render_template('like_content.html', data = rows)
+
+@app.route('/likedelete/<int:id>')
+def likedelete(id):
+    conn = db.dbconn()
+    cursor = conn.cursor()
+    sql = '''delete [like] where id = ?'''
+    cursor.execute(sql, id)
+    conn.commit()
+    conn.close()
+    return redirect('/likelist')
+
+###
 
 if __name__ == '__main__':
     app.run(debug=True, port=80)

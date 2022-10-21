@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}❤ like content page ❤{% endblock %}
+{% block content %}
+
+<!-- (1, '첫 번째 글제목', '첫 번째 글내용', '얼마나 좋아하는지', '/static/like/img/img01.png') -->
+
+<br>
+<br>
+
+<h1 class = "text-center"><b><i>❤ like 컨텐츠 확인 ❤</b></i></h1>
+
+<br>
+<br>
+
+<div class = "container">
+
+      <div class="card mb-3">
+        <img src={{data[4]}} class="card-img-top" alt="..."> <!-- alt : 이미지가 없을 때 나타나는 글 -->
+        <div class="card-body">
+          <h5 class="card-title">얼마나 좋아하는지 : {{data[3]}}</h5>
+          <h3 class="card-title"><b>{{data[1]}}</b></h3>
+          <p class="card-text">{{data[2]}}</p>
+          <p class="card-text"><small class="text-muted">{{data[0]}}번째 글입니다.</small></p>
+        </div>
+      </div>
+
+</div>
+
+<br>
+
+<div class = "container">
+    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+        <a href="/likelist">
+            <button class="btn btn-outline-warning" type="button">수정</button>
+        </a>
+
+        <a href="/likedelete/{{data[0]}}">
+            <button class="btn btn-outline-danger" type="button">삭제</button>
+        </a>
+
+        <a href="/likelist">
+            <button class="btn btn-outline-success" type="button">목록</button>
+        </a>
+
+      </div>
+
+</div>
+
+{% endblock %}
